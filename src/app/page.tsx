@@ -3,6 +3,8 @@ import StatsCard from "@/components/StatsCard";
 import { BsPerson } from 'react-icons/bs'
 import { RiBankLine } from "react-icons/ri";
 import { BiCoin } from "react-icons/bi";
+import TopUsers from "@/components/TopUsers";
+
 
 export default function Home() {
   const presentation = () => {
@@ -13,12 +15,12 @@ export default function Home() {
           mt={4}
           p={6}
           borderRadius="md"
-          bg="#0d060366"
+          // bg="#0d060366"
           boxShadow="lg"
           backdropFilter="blur(12px)"
           textAlign="center">
           <Text>
-            Apple is the official liquidity protocol of Etherlink. It allows you to gain apples by interacting with all the cool DeFi protocols on Etherlink.
+            Apple Farm is the official liquidity protocol of Etherlink. It allows you to gain apples by interacting with all the cool DeFi protocols on Etherlink.
             Sign up and see the apples rain!
           </Text>
         </Box>
@@ -37,10 +39,11 @@ export default function Home() {
   };
 
   return (
-    <main className="p-4 pb-10 min-h-[100vh] flex justify-center container max-w-screen-lg mx-auto">
-      <div className="py-20">
+    <main className="p-4 pb-10 flex justify-center container max-w-screen-lg mx-auto">
+      <div className="py-10">
         {presentation()}
         {dataNumber()}
+        <TopUsers numberOfPlayer={5} />
       </div>
     </main>
   );
