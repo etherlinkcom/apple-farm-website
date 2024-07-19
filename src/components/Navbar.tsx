@@ -13,14 +13,11 @@ import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons'
 import { ConnectButton } from "thirdweb/react";
 import { client } from "@/app/client";
 
-interface Props {
-  children: React.ReactNode
-}
+const Links = ['Home', 'Dashboard', 'Leaderboard'];
+const Pages = ['/', '/dashboard', '/leaderboard']; // be sure the pages correspond to the good link above
 
-const Links = ['Home', 'Dashboard', 'Leaderboard']
-
-const NavLink = (props: Props) => {
-  const { children } = props
+const NavLink = (props: {title: string, link: string}) => {
+  const { title, link } = props
   return (
     <Box
       fontWeight='semibold'
@@ -33,8 +30,8 @@ const NavLink = (props: Props) => {
         textDecoration: 'none',
         bg: useColorModeValue('gray.200', 'gray.700'),
       }}
-      href={'#'}>
-      {children}
+      href={link}>
+      {title}
     </Box>
   )
 }
@@ -56,8 +53,8 @@ export default function Navbar() {
           <HStack spacing={8} alignItems={'center'}>
             <Box>Logo</Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <NavLink key={index} title={link} link={Pages[index]} />
               ))}
             </HStack>
           </HStack>
@@ -65,8 +62,8 @@ export default function Navbar() {
             <ConnectButton
               client={client}
               appMetadata={{
-                name: "Example App",
-                url: "https://example.com",
+                name: "Apple Farm",
+                url: "https://example.com", // TODO modify with the production link
               }}
             />
           </Flex>
@@ -75,8 +72,8 @@ export default function Navbar() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <NavLink key={index} title={link} link={Pages[index]} />
               ))}
             </Stack>
           </Box>
