@@ -15,11 +15,11 @@ import {
 
 // TODO remove, just for tests
 const users = [
-  {rank: 1, name: "Satoshi", apples: 10000000},
-  {rank: 2, name: "Vitalik B.", apples: 9999999},
-  {rank: 3, name: "Etherlonker", apples: 7000000},
-  {rank: 4, name: "The intern", apples: 4000000},
-  {rank: 5, name: "XxCryptoDegenxX", apples: 3000000}
+  { rank: 1, name: "The intern", apples: 10000000 },
+  { rank: 2, name: "Satoshi", apples: 9999999 },
+  { rank: 3, name: "Vitalik B.", apples: 7000000 },
+  { rank: 4, name: "Etherlonker", apples: 4000000 },
+  { rank: 5, name: "XxCryptoDegenxX", apples: 3000000 }
 ]
 
 const TopUsers = ({ numberOfPlayer }: { numberOfPlayer: number }) => {
@@ -35,7 +35,7 @@ const TopUsers = ({ numberOfPlayer }: { numberOfPlayer: number }) => {
     <Box m={5} mt={7}>
       <Text textAlign={'center'} fontSize={'large'} fontWeight={'bold'}>Top {numberOfPlayer} Users</Text>
       <TableContainer mt={1}>
-        <Table size='sm' variant='simple'>
+        <Table size={['sm', 'md', 'lg']} variant='simple'>
           <Thead>
             <Tr>
               <Th>Rank</Th>
