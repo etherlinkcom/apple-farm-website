@@ -1,9 +1,10 @@
-import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import StatsCard from "@/components/StatsCard";
 import { BsPerson } from 'react-icons/bs'
 import { RiBankLine } from "react-icons/ri";
 import { BiCoin } from "react-icons/bi";
 import TopUsers from "@/components/TopUsers";
+import BlurredBorderImage from "@/components/BlurredBorderImage";
 
 
 export default function Home() {
@@ -41,6 +42,10 @@ export default function Home() {
   return (
     <main className="p-4 pb-10 flex justify-center container max-w-screen-lg mx-auto">
       <div className="py-10">
+        {/* <Box>
+          <Image borderRadius='10px' src='forest-4.jpg' alt='Forest' />
+        </Box> */}
+        <BlurredBorderImage />
         {presentation()}
         {dataNumber()}
         <TopUsers numberOfPlayer={5} />
