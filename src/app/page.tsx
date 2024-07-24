@@ -5,6 +5,7 @@ import { RiBankLine } from "react-icons/ri";
 import { BiCoin } from "react-icons/bi";
 import TopUsers from "@/components/TopUsers";
 import BlurredBorderImage from "@/components/BlurredBorderImage";
+import ProtocolsPresentation from "@/components/ProtocolsPresentation";
 
 
 export default function Home() {
@@ -49,6 +50,7 @@ export default function Home() {
         {presentation()}
         {dataNumber()}
         <TopUsers numberOfPlayer={5} />
+        <ProtocolsPresentation />
       </div>
     </main>
   );
