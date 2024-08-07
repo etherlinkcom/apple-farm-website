@@ -51,7 +51,7 @@ export default function Navbar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+            {/* <Box>Logo</Box> */}
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link, index) => (
                 <NavLink key={index} title={link} link={Pages[index]} />
